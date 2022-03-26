@@ -1,0 +1,30 @@
+// CONSTANTS
+// -- colors --
+$color-back-navbar: #fff;
+$color-shadow: #1f201e2f;
+
+// -- Fonts --
+$font-s-title: 1.5rem;
+$font-s-body: 0.995rem;
+
+// -- index --
+$z-fixed: 100;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// ---->> HEADER <<----
+.header {
+  @include flex-center;
+  position: fixed;
+  background: $color-back-navbar;
+  width: 100%;
+  box-shadow: 0px 1px 2px $color-shadow;
+  z-index: $z-fixed;
+
+  nav {
+  }
+}

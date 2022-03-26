@@ -6,8 +6,9 @@ import Home from './containers/Home'
 import Characters from './containers/Characters'
 import Favorites from './containers/Favorites'
 import Account from './containers/Account'
+import './style/style.scss'
 
-
+export * as actionCreators from './actions/index'
 
 function App() {
   return (
