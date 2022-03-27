@@ -25,11 +25,7 @@ const Characters = () => {
     }, [charactersData])
 
     const handleSearch = (e) => {
-        console.log(e.target.value.toUpperCase());
-        const tes = 'hola loco'
-        /* if (tes.includes(e.target.value)) {
-            console.log('si la contine');
-        } */
+        // console.log(e.target.value.toUpperCase());
 
         setCharacters(charactersData.filter(
             item => item.name.toUpperCase().includes(e.target.value.toUpperCase()))
@@ -46,6 +42,7 @@ const Characters = () => {
                 <h1 className='title'>Characters</h1>
                 <form className='filter'>
                     <input
+                        className='search'
                         type="text"
                         placeholder='Search'
                         onChange={handleSearch}

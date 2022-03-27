@@ -150,7 +150,22 @@ button {
   }
 
   .filter {
-    background-color: #73d802;
+    .search {
+      width: 10rem;
+      padding: 0.6rem 1rem;
+      color: $color-gray-dark;
+      font-size: 0.9rem;
+      border: 2px solid $color-green-dark;
+      border-radius: 0.5rem;
+      outline: none;
+      transition: 0.3s;
+
+      &:focus,
+      &:hover {
+        width: 100%;
+        border-color: $color-green-light;
+      }
+    }
   }
 
   .card-container {
