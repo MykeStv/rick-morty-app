@@ -9,9 +9,7 @@ const Character = () => {
 
     console.log(location.state);
 
-    const style = {
-        padding: '7rem'
-    }
+
 
     let statusIcon = {
         width: '0.5rem',
@@ -29,36 +27,39 @@ const Character = () => {
 
 
     return (
-        <div style={style} className='character_page'>
+        <div className='character_page'>
 
-            <img src={character.image} alt="" />
+            <div className='character_card'>
+                <img src={character.image} alt="" />
 
-            <div className='info_container'>
+                <div className='info_container'>
 
-                <div className="character_title">
-                    <h2>{character.name}</h2>
-                    <span className='character_status'>
-                        <div style={statusIcon}></div>
-                        {character.status} - {character.species}
-                    </span>
+                    <div className="character_title">
+                        <h2>{character.name}</h2>
+                        <span className='character_status'>
+                            <div style={statusIcon}></div>
+                            {character.status} - {character.species}
+                        </span>
+                    </div>
+
+                    <div className='character_info'>
+                        <span>Gender:</span>
+                        <p>{character.gender}</p>
+                    </div>
+
+                    <div className="character_info">
+                        <span>Origin:</span>
+                        <p>{character.origin.name}</p>
+                    </div>
+
+                    <div className="character_info">
+                        <span>Location:</span>
+                        <p>{character.location.name}</p>
+                    </div>
+
                 </div>
-
-                <div className='character_gender'>
-                    <span>Gender:</span>
-                    <p>{character.gender}</p>
-                </div>
-
-                <div className="character_origin">
-                    <span>Origin:</span>
-                    <p>{character.origin.name}</p>
-                </div>
-
-                <div className="character_location">
-                    <span>Location:</span>
-                    <p>{character.location.name}</p>
-                </div>
-
             </div>
+
 
         </div>
     )
