@@ -33,6 +33,10 @@ $z-fixed: 100;
   align-items: center;
 }
 
+@mixin page-padding {
+  padding: 7rem 2rem 2.5rem;
+}
+
 // ---->> BASE <<----
 * {
   box-sizing: border-box;
@@ -126,10 +130,13 @@ button {
 }
 
 // ---->> HOME <<----
+.home {
+  @include page-padding();
+}
 
 // ---->> CHARACTERS <<----
 .characters {
-  padding: 7rem 2rem 2.5rem;
+  @include page-padding();
 
   width: 100%;
   .title {
