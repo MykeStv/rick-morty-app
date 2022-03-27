@@ -3,11 +3,15 @@ import { useDispatch, useSelector } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { actionCreators } from '../App'
 import CharCard from '../components/CharCard'
+import { BiSearch } from 'react-icons/bi'
+
 
 const Characters = () => {
 
-    const characters = useSelector((state) => state.characters)
+    const charactersData = useSelector((state) => state.characters)
     const dispatch = useDispatch()
+
+    const [characters, setCharacters] = useState([])
 
     const { getCharacters } = bindActionCreators(actionCreators, dispatch)
 
@@ -16,6 +20,23 @@ const Characters = () => {
         getCharacters()
     }, [])
 
+    useEffect(() => {
+        setCharacters(charactersData)
+    }, [charactersData])
+
+    const handleSearch = (e) => {
+        console.log(e.target.value.toUpperCase());
+        const tes = 'hola loco'
+        /* if (tes.includes(e.target.value)) {
+            console.log('si la contine');
+        } */
+
+        setCharacters(charactersData.filter(
+            item => item.name.toUpperCase().includes(e.target.value.toUpperCase()))
+        )
+
+
+    }
 
 
     return (
@@ -23,7 +44,14 @@ const Characters = () => {
 
             <div className='bar'>
                 <h1 className='title'>Characters</h1>
-                <div className='filter'>Filter</div>
+                <form className='filter'>
+                    <input
+                        type="text"
+                        placeholder='Search'
+                        onChange={handleSearch}
+                    />
+
+                </form>
 
             </div>
 

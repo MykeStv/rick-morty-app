@@ -8,6 +8,7 @@ $color-green-dark: #4c8e06;
 $color-gray-dark: #485848;
 $color-gray-dark2: #1f251f;
 $color-gray-light: #ececec;
+$color-gray-light2: #787a78;
 $color-red: #c70404;
 
 // -- Fonts --
@@ -95,6 +96,7 @@ button {
       position: fixed;
       background: $color-back-navbar;
       top: -100%;
+      right: 0;
       width: 100%;
       height: 100%;
       transition: 0.35s;
@@ -123,7 +125,7 @@ button {
     font-size: 1.75rem;
     position: absolute;
     top: 1rem;
-    right: 1.85rem;
+    right: 1rem;
     cursor: pointer;
   }
 
@@ -212,7 +214,8 @@ button {
   display: flex;
   justify-content: center;
   background: $color-gray-light;
-  height: 90vh;
+  // height: 90vh;
+  margin-bottom: 5rem;
   transition: 0.3s;
 
   .character_card {
@@ -251,6 +254,26 @@ button {
         p {
           font-weight: 500;
           color: $color-gray-dark2;
+        }
+      }
+
+      .add_favorites {
+        @include flex-center();
+        flex-direction: column;
+        padding-top: 0.5rem;
+
+        .star {
+          color: $color-gray-light2;
+          font-size: 1.75rem;
+        }
+        span {
+          opacity: 0;
+          // display: none;
+          transition: 0.4s;
+        }
+
+        &:hover span {
+          opacity: 0.3;
         }
       }
     }

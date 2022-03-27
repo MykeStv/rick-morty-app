@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom';
+import { GiRoundStar } from 'react-icons/gi'
+
 
 const Character = () => {
 
@@ -24,7 +26,6 @@ const Character = () => {
     } else if (character.status == 'Dead') {
         statusIcon = { ...statusIcon, backgroundColor: '#c70404' }
     }
-
 
     return (
         <div className='character_page'>
@@ -55,6 +56,12 @@ const Character = () => {
                     <div className="character_info">
                         <span>Location:</span>
                         <p>{character.location.name}</p>
+                    </div>
+
+                    <div className="add_favorites">
+                        <GiRoundStar className='star' />
+
+                        <span>Add to favorites</span>
                     </div>
 
                 </div>
