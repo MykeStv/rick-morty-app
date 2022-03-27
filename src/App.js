@@ -6,6 +6,7 @@ import Home from './containers/Home'
 import Characters from './containers/Characters'
 import Favorites from './containers/Favorites'
 import Account from './containers/Account'
+import Character from './components/Character'
 import './style/style.scss'
 
 export * as actionCreators from './actions/index'
@@ -22,6 +23,8 @@ function App() {
           <Route path='/characters' element={<Characters />}/>
           <Route path='/favorites' element={<Favorites />}/>
           <Route path='/account' element={<Account />}/>
+
+          <Route path='/character' element={<Character />}/>
         </Routes>
 
         <Footer />

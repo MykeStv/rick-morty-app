@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const CharCard = ({ item }) => {
     // console.log(item)
@@ -11,12 +12,21 @@ const CharCard = ({ item }) => {
         setHover(false)
     }
 
+    const navigate = useNavigate()
+
+    const handleClick = () => {
+        navigate('/character', { state: item })
+    }
+
+
     return (
-        <div className='card_content'>
+        <div className='card_content'
+            onClick={() => handleClick()}
+        >
             <div
                 className='card'
-                onMouseEnter={() => mouseHover()}
-                onMouseLeave={() => mouseLeave()}
+            /* onMouseEnter={() => mouseHover()}
+            onMouseLeave={() => mouseLeave()} */
             >
 
                 <div className='card_img'>
