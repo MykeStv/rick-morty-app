@@ -1,9 +1,7 @@
 import {actionTypes} from '../constants/actionTypes'
 
 const initialState = {
-    characters: {
-        results: []
-    }
+    characters: []
 }
 
 const reducer = (state = initialState, action) => {

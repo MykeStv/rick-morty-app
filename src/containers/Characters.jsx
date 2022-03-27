@@ -6,7 +6,7 @@ import CharCard from '../components/CharCard'
 
 const Characters = () => {
 
-    const characters = useSelector((state) => state.characters.results)
+    const characters = useSelector((state) => state.characters)
     const dispatch = useDispatch()
 
     const { getCharacters } = bindActionCreators(actionCreators, dispatch)

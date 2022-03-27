@@ -22,7 +22,7 @@ const Header = () => {
                 <div className={`nav_menu ${menuVisible ? 'show-menu' : ''}`}>
                     <ul className="nav_list">
                         <li className="nav_item" onClick={() => toggleMenu()}>
-                            <NavLink className='link' to={'/'}>home</NavLink>
+                            <NavLink className='link' to={'/'}>Home</NavLink>
                         </li>
                         <li className="nav_item" onClick={() => toggleMenu()}>
                             <NavLink className='link' to={'/characters'}>Characters</NavLink>

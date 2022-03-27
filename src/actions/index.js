@@ -13,25 +13,30 @@ export const getCharacters = () => async(dispatch) => {
         console.log(res.data)
         
         dataAPI = res.data.results
-        
-    }).then(
-        api.get('/?page=2').then(res => {
-            res.data.results.forEach(e => dataAPI.push(e))
-            dispatch({
-                type: actionTypes.CHARACTERS, payload: res.data
-            })
-        })
-    )
-
-}
-
-const getNextPage = (nextUrl) => {
-
-    api.get(nextUrl).then(res => {
-        console.log()
+        getNextPage(res.data.info.next)
     })
 
+    const getNextPage = (nextUrl) => {
+
+        if (nextUrl !== null) {
+    
+            api.get(nextUrl).then(res => {
+                res.data.results.forEach(e => dataAPI.push(e))
+                getNextPage(res.data.info.next)
+            })
+    
+        } else {
+            console.log()
+            dispatch({
+                type: actionTypes.CHARACTERS, payload: dataAPI
+            })
+        }
+    
+    }
+
 }
+
+
 
 /* export const getCharacters = () => async(dispatch) => {
 

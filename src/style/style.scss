@@ -69,10 +69,11 @@ button {
   nav {
     @include flex-space-between;
     height: $height-navbar;
+    padding: 0 1rem;
   }
 
   .logo {
-    //color: $color-green-light;
+    color: $color-green-dark;
     font-weight: $font-w-bold;
     // z-index: $z-fixed;
   }
@@ -106,12 +107,12 @@ button {
   }
 
   .link {
-    color: $color-green-light;
+    color: $color-gray-dark;
     font-weight: $font-w-semibold;
     transition: 0.2s;
 
     &:hover {
-      color: $color-green-dark;
+      color: $color-green-light;
     }
   }
 
@@ -119,7 +120,7 @@ button {
     font-size: 1.75rem;
     position: absolute;
     top: 1rem;
-    right: 1rem;
+    right: 1.85rem;
     cursor: pointer;
   }
 
@@ -140,7 +141,7 @@ button {
 
   width: 100%;
   .title {
-    color: $color-green-dark;
+    color: $color-gray-dark;
   }
 
   .filter {
@@ -199,5 +200,26 @@ button {
 
   &:hover {
     transform: translateY(-0.3rem);
+  }
+}
+
+// FOR LARGER DEVICES
+
+@media screen and (min-width: 767px) {
+  .header {
+    .nav_toggle,
+    .close {
+      display: none;
+    }
+
+    .nav_list {
+      padding: 0;
+      flex-direction: row;
+      column-gap: 3rem;
+    }
+
+    .link {
+      font-weight: 400;
+    }
   }
 }
