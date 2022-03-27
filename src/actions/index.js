@@ -11,7 +11,7 @@ export const getCharacters = () => async(dispatch) => {
 
     api.get('/').then(res => {
         console.log(res.data)
-        
+        res.data.results.map(e => e.fav = false)
         dataAPI = res.data.results
         getNextPage(res.data.info.next)
     })
@@ -21,12 +21,13 @@ export const getCharacters = () => async(dispatch) => {
         if (nextUrl !== null) {
     
             api.get(nextUrl).then(res => {
+                res.data.results.map(e => e.fav = false)
                 res.data.results.forEach(e => dataAPI.push(e))
                 getNextPage(res.data.info.next)
             })
     
         } else {
-            console.log()
+            
             dispatch({
                 type: actionTypes.CHARACTERS, payload: dataAPI
             })
@@ -34,6 +35,13 @@ export const getCharacters = () => async(dispatch) => {
     
     }
 
+}
+
+export const favoriteAction = (characterId) => (dispatch) => {
+
+    dispatch({
+        type: actionTypes.FAVORITE, payload: { id: characterId}
+    })
 }
 
 

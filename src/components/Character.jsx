@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import { GiRoundStar } from 'react-icons/gi'
+import { bindActionCreators } from 'redux';
+import { actionCreators } from '../App'
+import { useDispatch } from 'react-redux';
 
 
 const Character = () => {
@@ -8,10 +11,11 @@ const Character = () => {
     const location = useLocation()
 
     const [character, setCharacter] = useState(location.state)
-
+    const dispatch = useDispatch()
     console.log(location.state);
 
-
+    const { favoriteAction } = bindActionCreators(actionCreators, dispatch)
+    // console.log(location.state);
 
     let statusIcon = {
         width: '0.5rem',
@@ -25,6 +29,15 @@ const Character = () => {
         statusIcon = { ...statusIcon, backgroundColor: '#73d802' }
     } else if (character.status == 'Dead') {
         statusIcon = { ...statusIcon, backgroundColor: '#c70404' }
+    }
+
+    const addFavorites = () => {
+        favoriteAction(character.id)
+        setCharacter({ ...character, fav: !character.fav })
+    }
+
+    const starIcon = {
+        color: character.fav ? '#8307f8' : ''
     }
 
     return (
@@ -59,9 +72,13 @@ const Character = () => {
                     </div>
 
                     <div className="add_favorites">
-                        <GiRoundStar className='star' />
+                        <GiRoundStar
+                            className='star'
+                            onClick={addFavorites}
+                            style={starIcon}
+                        />
 
-                        <span>Add to favorites</span>
+                        <span>Favorites</span>
                     </div>
 
                 </div>

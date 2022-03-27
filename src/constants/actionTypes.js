@@ -1,4 +1,5 @@
 
 export const actionTypes = {
-    CHARACTERS: 'get-characters'
+    CHARACTERS: 'get-characters',
+    FAVORITE: 'favorite-action'
 }
