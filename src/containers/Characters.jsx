@@ -19,13 +19,21 @@ const Characters = () => {
 
 
     return (
-        <div>Characters
+        <div className='characters'>
 
-            {
-                characters.map(char => (
-                    <CharCard key={char.id} name={char.name} />
-                ))
-            }
+            <div className='bar'>
+                <h1 className='title'>Characters</h1>
+                <div className='filter'>Filter</div>
+
+            </div>
+
+            <div className='card-container'>
+                {
+                    characters.map(char => (
+                        <CharCard key={char.id} item={char} />
+                    ))
+                }
+            </div>
 
         </div>
     )

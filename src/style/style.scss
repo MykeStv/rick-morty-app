@@ -1,11 +1,23 @@
 // CONSTANTS
 // -- colors --
 $color-back-navbar: #fff;
-$color-shadow: #1f201e2f;
+$color-shadow: #1f201e31;
+$color-purple1: #551a8b;
+$color-green-light: #73d802;
+$color-green-dark: #4c8e06;
+$color-gray-dark: #485848;
 
 // -- Fonts --
 $font-s-title: 1.5rem;
+$font-s-middle1: 1.15rem;
+$font-s-middle2: 1.25rem;
 $font-s-body: 0.995rem;
+$font-w-bold: 700;
+$font-w-semibold: 500;
+$font-w-normal: 400;
+
+// -- heights --
+$height-navbar: 3.5rem;
 
 // -- index --
 $z-fixed: 100;
@@ -15,16 +27,170 @@ $z-fixed: 100;
   justify-content: center;
   align-items: center;
 }
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// ---->> BASE <<----
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
 
 // ---->> HEADER <<----
 .header {
-  @include flex-center;
   position: fixed;
   background: $color-back-navbar;
   width: 100%;
-  box-shadow: 0px 1px 2px $color-shadow;
+  box-shadow: 0px 1px 4px $color-shadow;
   z-index: $z-fixed;
 
   nav {
+    @include flex-space-between;
+    height: $height-navbar;
+  }
+
+  .logo {
+    //color: $color-green-light;
+    font-weight: $font-w-bold;
+    // z-index: $z-fixed;
+  }
+
+  .nav_toggle {
+    // display: inline-flex;
+    font-size: $font-s-middle1;
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 767px) {
+    .nav_menu {
+      position: fixed;
+      background: $color-back-navbar;
+      top: -100%;
+      width: 100%;
+      height: 100%;
+      transition: 0.35s;
+      z-index: 99;
+    }
+  }
+
+  .nav_list {
+    @include flex-center();
+    flex-direction: column;
+    row-gap: 2rem;
+    padding-top: 7rem;
+  }
+
+  .link {
+    color: $color-green-light;
+    font-weight: $font-w-semibold;
+    transition: 0.2s;
+
+    &:hover {
+      color: $color-green-dark;
+    }
+  }
+
+  .close {
+    font-size: 1.75rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+
+  .show-menu {
+    top: 0rem;
+    // right: 0;
+  }
+}
+
+// ---->> HOME <<----
+
+// ---->> CHARACTERS <<----
+.characters {
+  padding: 7rem 2rem 2.5rem;
+
+  width: 100%;
+  .title {
+    color: $color-green-dark;
+  }
+
+  .filter {
+    background-color: #73d802;
+  }
+
+  .card-container {
+    display: grid;
+    margin: 3rem 0 2rem;
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+// ---->> CHARACTER CARD <<----
+.card_content {
+  @include flex-center();
+}
+.card {
+  width: 200px;
+  height: 250px;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px 2px #ddd;
+  transition: 0.325s;
+  cursor: pointer;
+
+  .card_img {
+    height: 200px;
+
+    .character_img {
+      border-radius: 0.5rem 0.5rem 0 0;
+      max-width: 200px;
+    }
+  }
+
+  .card_info {
+    @include flex-center();
+    padding: 0 1rem;
+    height: 50px;
+    text-align: center;
+
+    .name {
+      color: $color-gray-dark;
+      font-size: $font-s-body;
+      font-weight: $font-w-semibold;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .show-info {
+    //MAYME MAS ADELANTE
+  }
+
+  &:hover {
+    transform: translateY(-0.3rem);
   }
 }

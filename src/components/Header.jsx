@@ -1,28 +1,48 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { BiGridAlt } from 'react-icons/bi'
+import { GrFormClose } from 'react-icons/gr'
+
 
 const Header = () => {
+
+    const [menuVisible, setMenuVisible] = useState(false)
+
+    const toggleMenu = () => {
+        setMenuVisible(prevMenuVisible => !prevMenuVisible)
+    }
+    // console.log(menuVisible);
+
     return (
         <div className='header'>
 
             <nav>
-                <NavLink to={'/'}>Rick & Morty App</NavLink>
+                <NavLink className='logo' to={'/'}>Rick & Morty App</NavLink>
 
-                <div className='nav_menu'>
+                <div className={`nav_menu ${menuVisible ? 'show-menu' : ''}`}>
                     <ul className="nav_list">
-                        <li className="nav_item">
-                            <NavLink to={'/'}>home</NavLink>
+                        <li className="nav_item" onClick={() => toggleMenu()}>
+                            <NavLink className='link' to={'/'}>home</NavLink>
                         </li>
-                        <li className="nav_item">
-                            <NavLink to={'/characters'}>Characters</NavLink>
+                        <li className="nav_item" onClick={() => toggleMenu()}>
+                            <NavLink className='link' to={'/characters'}>Characters</NavLink>
                         </li>
-                        <li className="nav_item">
-                            <NavLink to={'/favorites'}>Favorites</NavLink>
+                        <li className="nav_item" onClick={() => toggleMenu()}>
+                            <NavLink className='link' to={'/favorites'}>Favorites</NavLink>
                         </li>
-                        <li className="nav_item">
-                            <NavLink to={'/account'}>Account</NavLink>
+                        <li className="nav_item" onClick={() => toggleMenu()}>
+                            <NavLink className='link' to={'/account'}>Account</NavLink>
                         </li>
                     </ul>
+
+                    <div className="close" onClick={() => toggleMenu()}>
+                        <GrFormClose />
+                    </div>
+
+                </div>
+
+                <div className='nav_toggle' onClick={() => toggleMenu()}>
+                    <BiGridAlt />
                 </div>
 
             </nav>
