@@ -20,11 +20,11 @@ function App() {
         
         <Routes>
           <Route path='/rick-morty-app/' element={<Home />}/>
-          <Route path='/characters' element={<Characters />}/>
-          <Route path='/favorites' element={<Favorites />}/>
-          <Route path='/account' element={<Account />}/>
+          <Route path='/rick-morty-app/characters' element={<Characters />}/>
+          <Route path='/rick-morty-app/favorites' element={<Favorites />}/>
+          <Route path='/rick-morty-app/account' element={<Account />}/>
 
-          <Route path='/character' element={<Character />}/>
+          <Route path='/rick-morty-app/character' element={<Character />}/>
         </Routes>
 
         <Footer />

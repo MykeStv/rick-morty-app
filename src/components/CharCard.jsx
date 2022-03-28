@@ -15,7 +15,7 @@ const CharCard = ({ item }) => {
     const navigate = useNavigate()
 
     const handleClick = () => {
-        navigate('/character', { state: item })
+        navigate('/rick-morty-app/character', { state: item })
     }
 
 

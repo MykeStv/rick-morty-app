@@ -22,16 +22,16 @@ const Header = () => {
                 <div className={`nav_menu ${menuVisible ? 'show-menu' : ''}`}>
                     <ul className="nav_list">
                         <li className="nav_item" onClick={() => toggleMenu()}>
-                            <NavLink className='link' to={'/'}>Home</NavLink>
+                            <NavLink className='link' to={'/rick-morty-app/'}>Home</NavLink>
                         </li>
                         <li className="nav_item" onClick={() => toggleMenu()}>
-                            <NavLink className='link' to={'/characters'}>Characters</NavLink>
+                            <NavLink className='link' to={'/rick-morty-app/characters'}>Characters</NavLink>
                         </li>
                         <li className="nav_item" onClick={() => toggleMenu()}>
-                            <NavLink className='link' to={'/favorites'}>Favorites</NavLink>
+                            <NavLink className='link' to={'/rick-morty-app/favorites'}>Favorites</NavLink>
                         </li>
                         <li className="nav_item" onClick={() => toggleMenu()}>
-                            <NavLink className='link' to={'/account'}>Account</NavLink>
+                            <NavLink className='link' to={'/rick-morty-app/account'}>Account</NavLink>
                         </li>
                     </ul>
 

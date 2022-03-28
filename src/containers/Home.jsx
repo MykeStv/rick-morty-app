@@ -7,7 +7,7 @@ const Home = () => {
     const navigate = useNavigate()
 
     const handleClick = () => {
-        navigate('/characters')
+        navigate('/rick-morty-app/characters')
     }
 
     return (
