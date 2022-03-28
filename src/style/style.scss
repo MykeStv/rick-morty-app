@@ -217,9 +217,9 @@ button {
     }
   }
 
-  .show-info {
+  /* .show-info {
     //MAYME MAS ADELANTE
-  }
+  } */
 
   &:hover {
     transform: translateY(-0.3rem);
@@ -233,8 +233,9 @@ button {
   justify-content: center;
   background: $color-gray-light;
   // height: 90vh;
-  margin-bottom: 5rem;
+  padding-bottom: 5rem;
   transition: 0.3s;
+  margin-bottom: 0.25rem;
 
   .character_card {
     background: #fff;

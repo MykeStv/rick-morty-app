@@ -1,0 +1,45 @@
+$color-background: #f5f6f7;
+$color-icons: #4c8e06;
+$color-icons2: #73d802;
+$color-title: #485848;
+$color-text: #787a78;
+
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  background-color: $color-background;
+  @include flex();
+  text-align: center;
+  flex-direction: column;
+  padding: 4rem 0 1.5rem;
+  row-gap: 1.75rem;
+
+  .media {
+    color: $color-icons;
+    @include flex();
+    column-gap: 1rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+
+    .icon {
+      transition: 0.2s;
+      &:hover {
+        transform: rotateZ(10deg) translateY(-0.15rem);
+        color: $color-icons2;
+      }
+    }
+  }
+  .author {
+    h4 {
+      color: $color-title;
+    }
+    span {
+      color: $color-text;
+      font-size: 0.925rem;
+    }
+  }
+}

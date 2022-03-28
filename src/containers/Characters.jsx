@@ -44,7 +44,7 @@ const Characters = () => {
                     <input
                         className='search'
                         type="text"
-                        placeholder='Search'
+                        placeholder='Search 🔎'
                         onChange={handleSearch}
                     />
 
