@@ -19,7 +19,7 @@ function App() {
         <Header/>
         
         <Routes>
-          <Route path='/' element={<Home />}/>
+          <Route path='/rick-morty-app/' element={<Home />}/>
           <Route path='/characters' element={<Characters />}/>
           <Route path='/favorites' element={<Favorites />}/>
           <Route path='/account' element={<Account />}/>
