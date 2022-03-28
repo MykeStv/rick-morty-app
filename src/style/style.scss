@@ -143,7 +143,8 @@ button {
 }
 
 // ---->> CHARACTERS <<----
-.characters {
+.characters,
+.favorites {
   @include page-padding();
 
   width: 100%;

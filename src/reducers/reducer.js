@@ -2,7 +2,6 @@ import {actionTypes} from '../constants/actionTypes'
 
 const initialState = {
     characters: [],
-    favorites: []
 }
 
 const reducer = (state = initialState, action) => {
