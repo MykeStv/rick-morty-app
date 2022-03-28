@@ -17,7 +17,7 @@ const Header = () => {
         <div className='header'>
 
             <nav>
-                <NavLink className='logo' to={'/'}>Rick & Morty App</NavLink>
+                <NavLink className='logo' to={'/rick-morty-app/'}>Rick & Morty App</NavLink>
 
                 <div className={`nav_menu ${menuVisible ? 'show-menu' : ''}`}>
                     <ul className="nav_list">
