@@ -10,7 +10,7 @@ export const getCharacters = () => async(dispatch) => {
     let dataAPI = []
 
     api.get('/').then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         res.data.results.map(e => e.fav = false)
         dataAPI = res.data.results
         getNextPage(res.data.info.next)

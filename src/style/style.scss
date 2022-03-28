@@ -40,7 +40,7 @@ $z-fixed: 100;
 }
 
 @mixin page-padding {
-  padding: 7rem 2rem 2.5rem;
+  padding: 6.5rem 2rem 2.5rem;
 }
 
 // ---->> BASE <<----
@@ -150,6 +150,7 @@ button {
   width: 100%;
   .title {
     color: $color-gray-dark;
+    margin-bottom: 0.5rem;
   }
 
   .filter {

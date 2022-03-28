@@ -1,0 +1,67 @@
+$color-background: #f5f6f7;
+$color-icons: #4c8e06;
+$color-icons2: #73d802;
+$color-title: #485848;
+$color-gray-dark2: #1f251f;
+$color-text: #787a78;
+
+@mixin page-padding {
+  padding: 6.5rem 2rem 2.5rem;
+}
+
+.account {
+  @include page-padding();
+
+  .title {
+    color: $color-title;
+    margin-bottom: 3rem;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    column-gap: 10%;
+
+    .profile {
+      img {
+        width: 150px;
+        border-radius: 50%;
+      }
+    }
+
+    .description {
+      table {
+        text-align: left;
+      }
+      th {
+        color: $color-icons;
+        padding-right: 1.5rem;
+      }
+      tr {
+        color: $color-title;
+      }
+      .signout {
+        margin-top: 2rem;
+        background-color: $color-title;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        transition: 0.2s;
+
+        &:hover {
+          background: $color-icons;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    .content {
+      flex-direction: column;
+      row-gap: 2rem;
+
+      .description {
+        text-align: center;
+      }
+    }
+  }
+}

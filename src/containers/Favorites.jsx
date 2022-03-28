@@ -17,10 +17,27 @@ const Favorites = () => {
         }))
     }, [])
 
+    const handleSearch = (e) => {
+        setCharacterFav(charactersData.filter(character => {
+            return character.fav === true
+        })
+            .filter(
+                item => item.name.toUpperCase().includes(e.target.value.toUpperCase()))
+        )
+    }
+
     return (
         <div className='favorites'>
             <div className="bar">
                 <h1 className='title'>Favorites</h1>
+                <form className='filter'>
+                    <input
+                        className='search'
+                        type="text"
+                        placeholder='Search 🔎'
+                        onChange={handleSearch}
+                    />
+                </form>
             </div>
 
             <div className='card-container'>

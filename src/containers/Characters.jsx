@@ -47,7 +47,6 @@ const Characters = () => {
                         placeholder='Search 🔎'
                         onChange={handleSearch}
                     />
-
                 </form>
 
             </div>
