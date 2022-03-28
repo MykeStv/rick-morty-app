@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/rick-morty-app/static/css/main.4cc25e43.css",
-    "main.js": "/rick-morty-app/static/js/main.96c135d2.js",
+    "main.js": "/rick-morty-app/static/js/main.7d216baa.js",
     "static/media/rick_morty_portal.png": "/rick-morty-app/static/media/rick_morty_portal.dbd7462082f1f39ad40d.png",
     "static/media/profile_img.jpg": "/rick-morty-app/static/media/profile_img.67b453c1aa035ae92e85.jpg",
     "index.html": "/rick-morty-app/index.html",
     "main.4cc25e43.css.map": "/rick-morty-app/static/css/main.4cc25e43.css.map",
-    "main.96c135d2.js.map": "/rick-morty-app/static/js/main.96c135d2.js.map"
+    "main.7d216baa.js.map": "/rick-morty-app/static/js/main.7d216baa.js.map"
   },
   "entrypoints": [
     "static/css/main.4cc25e43.css",
-    "static/js/main.96c135d2.js"
+    "static/js/main.7d216baa.js"
   ]
 }
