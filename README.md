@@ -6,6 +6,8 @@ Se utiliza el api de rick and morty: https://rickandmortyapi.com/
 
 Link de youtube con la pagina funcionando: https://youtu.be/okD5t-Yk4hA
 
+Link app desplegada: https://mykestv.github.io/rick-morty-app/
+
 **Nota:** La pagina de characters se demora un poco en cargar la primera vez. Por favor, ten paciencia en esto.
 
 Para agregar a favoritos, selecciona un personaje, te abre una pestaña con información de este y debes clickear a la estrella ⭐.
